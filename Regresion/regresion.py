@@ -14,7 +14,7 @@ def csv_reader(file_obj):
     for row in reader:
     	x.append(float(row[0]))
     	y.append(float(row[1]))
-    m=len(reader)	
+	
 
 
 def cargar(name):
@@ -30,7 +30,8 @@ def getXY():
 	X=np.matrix(parte)
 	X=X.T
 	Y=np.matrix(y)
-	ghost=[X,Y]
+	m=len(x)
+	ghost=[X,Y,m]
 	return ghost
 def main():
 	print("Hello")
