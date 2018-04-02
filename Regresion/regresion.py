@@ -7,7 +7,6 @@ alpha = 0.01;
 theta=np.matrix(np.random.rand(2)).T
 x=[]
 y=[]
-m=0
 #leer de archivo
 def csv_reader(file_obj):
     reader = csv.reader(file_obj)
@@ -21,7 +20,10 @@ def cargar(name):
 	with open(name) as f_obj:
 		csv_reader(f_obj)
 
-def getXY():
+
+#devuelve como lista X Y y m
+#m numero de ejemplos de aprendizaje
+def Iniciar():
 	cargar("ex1data1.txt")
 	ghost=[]
 	for i in range(len(x)):
@@ -30,9 +32,15 @@ def getXY():
 	X=np.matrix(parte)
 	X=X.T
 	Y=np.matrix(y)
-	m=len(x)
-	ghost=[X,Y,m]
+	ghost=[X,Y]
 	return ghost
+
+def computeCost(X,Y,theta):
+	m=len(X)
+	return 1/(2*m)*(X * theta - Y).T*(X * theta - Y)
+
+
+
 def main():
 	print("Hello")
 	cargar("ex1data1.txt")
