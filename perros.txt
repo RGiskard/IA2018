@@ -1,0 +1,5 @@
+perro.png
+perro1.png
+perro2.png
+perro3.png
+perro4.png

@@ -1,0 +1,5 @@
+gato.png
+gato1.png
+gato2.png
+gato3.png
+gato4.png
